@@ -1,25 +1,33 @@
-/* Ajuste visual NUESTRO SELLO - basado en referencia ELECVO */
-.sello-section{padding:76px 0 66px;background:#fff;position:relative;overflow:hidden;color:#263238}
-.sello-section:before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(14,46,99,.08) 1px,transparent 1px);background-size:15px 15px;opacity:.28;pointer-events:none}
-.sello-section:after{content:"";position:absolute;right:-35px;top:-20px;width:170px;height:170px;border:1px solid rgba(13,107,183,.06);transform:rotate(8deg);pointer-events:none}
+/* NUESTRO SELLO — identidad ELECVO: carbón, turquesa y dorado */
+.sello-section{padding:78px 0 70px;position:relative;overflow:hidden;color:#263238;background:linear-gradient(135deg,#e8edef 0%,#f3f5f5 48%,#e1e7e8 100%)}
+.sello-section:before{content:"";position:absolute;inset:0;background:linear-gradient(115deg,rgba(49,61,65,.08),transparent 38%,transparent 68%,rgba(22,185,174,.055)),radial-gradient(rgba(49,61,65,.12) 1px,transparent 1px);background-size:auto,18px 18px;opacity:.55;pointer-events:none}
+.sello-section:after{content:"";position:absolute;right:-95px;top:-105px;width:310px;height:310px;border:1px solid rgba(22,185,174,.17);box-shadow:0 0 0 36px rgba(49,61,65,.035),0 0 0 72px rgba(226,185,77,.025);transform:rotate(14deg);pointer-events:none}
 .sello-section .container{position:relative;z-index:1}
-.sello-heading{text-align:center;max-width:780px;margin:0 auto 38px}
-.sello-kicker{margin:0 0 7px;color:#0d6bb7!important;font-size:12px;font-weight:800;letter-spacing:2.2px;line-height:1.2}
-.sello-kicker:after{content:"";display:block;width:54px;height:2px;background:#e9b92c;margin:8px auto 0}
-.sello-heading h2{margin:0;color:#0e2e63!important;font-size:37px;line-height:1.15;font-weight:800}
-.sello-intro{max-width:650px;margin:13px auto 0;color:#65727a!important;font-size:15px;line-height:1.5}
-.sello-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-.sello-card{background:#fff!important;border-radius:9px;padding:26px 18px 24px;text-align:center;box-shadow:0 8px 22px rgba(24,52,72,.11);border:1px solid #edf0f2;border-top:4px solid #0d6bb7;min-height:258px;transition:transform .28s ease,box-shadow .28s ease,opacity .5s ease;opacity:0;transform:translateY(20px)}
-.sello-card:nth-child(even){border-top-color:#e9b92c}
+.sello-heading{text-align:center;max-width:790px;margin:0 auto 40px}
+.sello-kicker{display:inline-block;margin:0 0 10px;color:#168f88!important;font-size:12px;font-weight:900;letter-spacing:2.4px;line-height:1.2}
+.sello-kicker:after{content:"";display:block;width:58px;height:3px;background:linear-gradient(90deg,var(--teal),var(--gold));margin:9px auto 0;border-radius:3px}
+.sello-heading h2{margin:0;color:#263238!important;font-size:38px;line-height:1.15;font-weight:800}
+.sello-intro{max-width:665px;margin:14px auto 0;color:#5d6a6f!important;font-size:15px;line-height:1.55}
+.sello-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;perspective:1000px}
+.sello-card{--mx:50%;--my:50%;position:relative;overflow:hidden;background:linear-gradient(180deg,#fbfcfc 0%,#f2f5f5 100%)!important;border-radius:11px;padding:27px 19px 25px;text-align:center;box-shadow:0 10px 26px rgba(30,45,50,.13);border:1px solid rgba(49,61,65,.10);border-top:4px solid var(--teal);min-height:262px;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease,opacity .5s ease;opacity:0;transform:translateY(20px)}
+.sello-card:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at var(--mx) var(--my),rgba(22,185,174,.14),transparent 34%);opacity:0;transition:opacity .3s ease;pointer-events:none}
+.sello-card:nth-child(even){border-top-color:var(--gold)}
+.sello-card:nth-child(even):before{background:radial-gradient(circle at var(--mx) var(--my),rgba(226,185,77,.16),transparent 34%)}
 .sello-card.is-visible{opacity:1;transform:translateY(0)}
-.sello-card.is-visible:hover{transform:translateY(-6px);box-shadow:0 15px 32px rgba(24,52,72,.15)}
-.sello-icon{width:70px;height:70px;margin:0 auto 16px;border-radius:50%;display:grid;place-items:center;background:#eef6fc!important;color:#0d6bb7!important;border:1px solid #d8eaf7}
-.sello-card:nth-child(even) .sello-icon{background:#fff8e5!important;color:#e3a90f!important;border-color:#f6e6b2}
+.sello-card.is-visible:hover{transform:translateY(-8px) scale(1.015);box-shadow:0 20px 38px rgba(25,42,48,.20);border-color:rgba(22,185,174,.32)}
+.sello-card:nth-child(even).is-visible:hover{border-color:rgba(226,185,77,.46)}
+.sello-card:hover:before{opacity:1}
+.sello-icon{position:relative;z-index:1;width:72px;height:72px;margin:0 auto 17px;border-radius:50%;display:grid;place-items:center;background:#e4f3f2!important;color:#169f97!important;border:1px solid rgba(22,185,174,.28);box-shadow:0 6px 16px rgba(22,185,174,.10);transition:transform .3s ease,box-shadow .3s ease,background .3s ease}
+.sello-card:nth-child(even) .sello-icon{background:#f8efd3!important;color:#c99b27!important;border-color:rgba(226,185,77,.42);box-shadow:0 6px 16px rgba(226,185,77,.10)}
+.sello-card:hover .sello-icon{transform:translateY(-3px) scale(1.08) rotate(-2deg);box-shadow:0 10px 22px rgba(22,185,174,.20)}
+.sello-card:nth-child(even):hover .sello-icon{transform:translateY(-3px) scale(1.08) rotate(2deg);box-shadow:0 10px 22px rgba(226,185,77,.22)}
 .sello-icon svg{width:43px;height:43px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.sello-card h3{margin:0 0 9px;color:#0e2e63!important;font-size:16px;line-height:1.3}
-.sello-card p{margin:0;color:#68757c!important;font-size:13px;line-height:1.52}
-.sello-footer{width:max-content;max-width:100%;margin:31px auto 0;padding:8px 18px;border-top:2px solid #e9b92c;border-bottom:2px solid #e9b92c;display:flex;align-items:center;justify-content:center;gap:11px;color:#0e2e63!important}
-.sello-bolt{color:#e3a90f!important;font-size:24px;line-height:1}
-.sello-footer strong{font-size:14px}
+.sello-card h3{position:relative;z-index:1;margin:0 0 9px;color:#263238!important;font-size:16px;line-height:1.3;transition:color .25s ease}
+.sello-card:hover h3{color:#168f88!important}.sello-card:nth-child(even):hover h3{color:#a97d12!important}
+.sello-card p{position:relative;z-index:1;margin:0;color:#657278!important;font-size:13px;line-height:1.54}
+.sello-footer{width:max-content;max-width:100%;margin:33px auto 0;padding:10px 20px;background:rgba(49,61,65,.92);border-radius:6px;display:flex;align-items:center;justify-content:center;gap:11px;color:#fff!important;box-shadow:0 8px 20px rgba(30,45,50,.16);transition:transform .25s ease,box-shadow .25s ease}
+.sello-footer:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(30,45,50,.22)}
+.sello-bolt{color:var(--gold)!important;font-size:25px;line-height:1}.sello-footer strong{font-size:14px;font-weight:700}
 @media(max-width:900px){.sello-grid{grid-template-columns:repeat(2,1fr)}.sello-heading h2{font-size:33px}.sello-card{min-height:245px}}
-@media(max-width:600px){.sello-section{padding:60px 0 54px}.sello-grid{grid-template-columns:1fr;gap:16px}.sello-heading{margin-bottom:28px}.sello-heading h2{font-size:28px}.sello-intro{font-size:14px}.sello-card{min-height:auto;padding:24px 19px}.sello-footer{width:100%;text-align:center}.sello-footer strong{font-size:13px}}
+@media(max-width:600px){.sello-section{padding:62px 0 56px}.sello-grid{grid-template-columns:1fr;gap:17px}.sello-heading{margin-bottom:29px}.sello-heading h2{font-size:28px}.sello-intro{font-size:14px}.sello-card{min-height:auto;padding:25px 20px}.sello-footer{width:100%;text-align:center}.sello-footer strong{font-size:13px}}
+@media(prefers-reduced-motion:reduce){.sello-card{opacity:1;transform:none;transition:none}.sello-card.is-visible:hover,.sello-card:hover .sello-icon,.sello-footer:hover{transform:none}}
