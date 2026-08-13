@@ -1,5 +1,23 @@
+// Carga del ajuste visual de la sección Nuestro Sello
+if(!document.querySelector('link[href="sello.css"]')){
+  const selloCss=document.createElement('link');
+  selloCss.rel='stylesheet';
+  selloCss.href='sello.css';
+  document.head.appendChild(selloCss);
+}
+
 const menuBtn=document.querySelector('.menu-btn');
 const nav=document.querySelector('#nav');
+
+// Agrega SELLO al menú principal entre Servicios y Portafolio
+if(nav && !nav.querySelector('a[href="#sello"]')){
+  const portfolioLink=nav.querySelector('a[href="#portafolio"]');
+  const selloLink=document.createElement('a');
+  selloLink.href='#sello';
+  selloLink.textContent='SELLO';
+  if(portfolioLink) nav.insertBefore(selloLink,portfolioLink); else nav.appendChild(selloLink);
+}
+
 menuBtn.addEventListener('click',()=>{nav.classList.toggle('open');menuBtn.setAttribute('aria-expanded',nav.classList.contains('open'))});
 document.querySelectorAll('#nav a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
 
