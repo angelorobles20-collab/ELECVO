@@ -56,6 +56,19 @@ if('IntersectionObserver' in window){
   selloCards.forEach(card=>card.classList.add('is-visible'));
 }
 
+// Interacción sutil: el brillo de cada tarjeta sigue la posición del cursor
+selloCards.forEach(card=>{
+  card.addEventListener('pointermove',e=>{
+    const r=card.getBoundingClientRect();
+    card.style.setProperty('--mx',((e.clientX-r.left)/r.width*100).toFixed(1)+'%');
+    card.style.setProperty('--my',((e.clientY-r.top)/r.height*100).toFixed(1)+'%');
+  });
+  card.addEventListener('pointerleave',()=>{
+    card.style.setProperty('--mx','50%');
+    card.style.setProperty('--my','50%');
+  });
+});
+
 document.getElementById('year').textContent=new Date().getFullYear();
 const topBtn=document.getElementById('top');
 window.addEventListener('scroll',()=>topBtn.style.display=window.scrollY>450?'block':'none');
