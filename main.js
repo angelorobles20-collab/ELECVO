@@ -13,7 +13,18 @@ const projects=document.querySelectorAll('.portfolio-grid article');
 filterBtns.forEach(btn=>btn.addEventListener('click',()=>{filterBtns.forEach(b=>b.classList.remove('active'));btn.classList.add('active');const f=btn.dataset.filter;projects.forEach(p=>p.classList.toggle('hidden',f!=='all'&&p.dataset.cat!==f));}));
 
 const form=document.getElementById('contactForm');
-form.addEventListener('submit',e=>{e.preventDefault();document.getElementById('formStatus').textContent='Formulario validado correctamente. En la próxima etapa conectaremos el envío real por correo.';form.reset();});
+const formStatus=document.getElementById('formStatus');
+if(new URLSearchParams(window.location.search).get('mensaje')==='enviado'){
+  formStatus.textContent='Mensaje enviado correctamente. Gracias por contactar a ELECVO.';
+  history.replaceState({},document.title,window.location.pathname+'#contacto');
+}
+if(form){
+  form.addEventListener('submit',()=>{
+    formStatus.textContent='Enviando mensaje...';
+    const btn=form.querySelector('button[type="submit"]');
+    if(btn){btn.disabled=true;btn.textContent='ENVIANDO...';}
+  });
+}
 
 document.getElementById('year').textContent=new Date().getFullYear();
 const topBtn=document.getElementById('top');
