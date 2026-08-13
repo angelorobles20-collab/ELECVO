@@ -26,6 +26,18 @@ if(form){
   });
 }
 
+const selloCards=document.querySelectorAll('.reveal-card');
+if('IntersectionObserver' in window){
+  const selloObserver=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){entry.target.classList.add('is-visible');selloObserver.unobserve(entry.target);}
+    });
+  },{threshold:.16});
+  selloCards.forEach(card=>selloObserver.observe(card));
+}else{
+  selloCards.forEach(card=>card.classList.add('is-visible'));
+}
+
 document.getElementById('year').textContent=new Date().getFullYear();
 const topBtn=document.getElementById('top');
 window.addEventListener('scroll',()=>topBtn.style.display=window.scrollY>450?'block':'none');
