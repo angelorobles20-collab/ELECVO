@@ -33,3 +33,34 @@ footer{background:#10191e;color:#9eaaaf;padding:24px 0}.footer-inner{display:fle
 @media(max-width:900px){.sello-grid{grid-template-columns:repeat(2,1fr)}.sello-heading h2{font-size:34px}.sello-card{min-height:250px}}
 @media(max-width:600px){.sello-section{padding:68px 0 60px}.sello-grid{grid-template-columns:1fr;gap:16px}.sello-heading{margin-bottom:30px}.sello-heading h2{font-size:29px}.sello-intro{font-size:15px}.sello-card{min-height:auto;padding:25px 20px}.sello-footer{width:100%;text-align:center;align-items:flex-start}.sello-footer strong{font-size:14px}}
 @media(prefers-reduced-motion:reduce){.sello-card{opacity:1;transform:none;transition:none}.sello-card.is-visible:hover{transform:none}}
+
+
+/* Optimización responsive de la portada ELECVO */
+@media (max-width:900px){
+  #nav{max-height:calc(100dvh - 74px);overflow-y:auto;box-shadow:0 16px 28px rgba(0,0,0,.24)}
+  #nav>a{min-height:46px;display:flex;align-items:center}
+  .hero{background-position:60% center}
+}
+@media (max-width:600px){
+  .nav-wrap{height:68px}
+  .brand img{width:165px}
+  .menu-btn{font-size:30px;min-width:44px;min-height:44px}
+  #nav{top:68px;max-height:calc(100dvh - 68px)}
+  .hero{margin-top:68px;height:auto;min-height:0;padding:66px 0 72px;background-position:58% center;align-items:center}
+  .hero:before{background:linear-gradient(90deg,rgba(10,21,27,.91),rgba(10,21,27,.70))}
+  .hero-copy{max-width:100%}
+  .hero h1{font-size:clamp(29px,8.1vw,39px);line-height:1.12;letter-spacing:0;overflow-wrap:normal}
+  .eyebrow{font-size:clamp(13px,3.8vw,16px);margin-bottom:19px}
+  .accent-line{margin:24px 0;width:62px}
+  .hero-text{font-size:16px;line-height:1.55;margin-bottom:26px}
+  .hero .btn{min-height:50px;padding:13px 24px}
+  .about-section{padding:56px 0 60px}
+  .section-light,.portfolio-section,.contact-section{padding:58px 0}
+}
+@media (max-width:360px){
+  .hero h1{font-size:28px}
+  .hero{padding:52px 0 58px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+}
